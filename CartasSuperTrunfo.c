@@ -17,6 +17,80 @@ int main() {
     // Exibição dos Dados das Cartas:
     // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
     // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+    /*Poderia ter colocado variaveis diferente para cada carta, 
+    mas como nao e foco por enquanto nao é esse, deixei assim*/
+    int Populacao, PontoTur;
+    float Area, PIB;
+    char Estado;
+    char CodCarta[3], Cidade[20];
+
+    // Cidade 1
+    printf("-- Digite os valores para carta numero 1 --\n");
+
+    printf("Digite o nome da cidade: ");
+    scanf(" %[^\n]", Cidade);
+
+    printf("Digite a primeira letra do estado: ");
+    scanf(" %c", &Estado);
+
+    printf("Digite o codigo da carta da cidade(Ex:A1): ");
+    scanf("%s", CodCarta);
+
+    printf("Digite a quantidade de populacao da cidade: ");
+    scanf("%d", &Populacao);
+
+    printf("Digite o PIB da cidade: ");
+    scanf("%f", &PIB);
+
+    printf("Digite a area em metro quadrados da cidade: ");
+    scanf("%f", &Area);
+
+    printf("Digite a quantidade de pontos turisticos da cidade: ");
+    scanf("%d", &PontoTur);
+
+    //Retorna valores da carta
+    printf("--Carta 1: \n");
+    printf("Nome: %s \n", Cidade);
+    printf("Estado: %c\n", Estado);
+    printf("Código: %s \n", CodCarta);
+    printf("Populacao: %d \n", Populacao);
+    printf("PIB: %.2f \n", PIB);
+    printf("Área: %.2f Km² \n", Area);
+    printf("Pontos turisticos: %d \n", PontoTur);
+
+    // Cidade 2
+    printf("-- Digite os valores para carta numero 1 --\n");
+
+    printf("Digite o nome da cidade: ");
+    scanf(" %[^\n]", Cidade);
+
+    printf("Digite a primeira letra do estado: ");
+    scanf(" %c", &Estado);
+
+    printf("Digite o codigo da carta da cidade(Ex:A1): ");
+    scanf("%s", CodCarta);
+
+    printf("Digite a quantidade de populacao da cidade: ");
+    scanf("%d", &Populacao);
+
+    printf("Digite o PIB da cidade: ");
+    scanf("%f", &PIB);
+
+    printf("Digite a area em metro quadrados da cidade: ");
+    scanf("%f", &Area);
+
+    printf("Digite a quantidade de pontos turisticos da cidade: ");
+    scanf("%d", &PontoTur);
+
+    //Retorna valores da carta
+    printf("-- Carta 2: \n");
+    printf("Nome: %s \n", Cidade);
+    printf("Estado: %c\n", Estado);
+    printf("Código: %s \n", CodCarta);
+    printf("Populacao: %d \n", Populacao);
+    printf("PIB: %.2f \n", PIB);
+    printf("Área: %.2f Km² \n", Area);
+    printf("Pontos turisticos: %d \n", PontoTur);
 
     return 0;
 }
