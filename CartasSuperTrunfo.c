@@ -1,8 +1,10 @@
 #include <stdio.h>
 
 int main() {
-    int Populacao1, Populacao2, PontoTur1, PontoTur2;
+    int PontoTur1, PontoTur2, CompPop, CompPIB, CompArea, CompTur, CompPercap, CompDensi, SuperPoderF;
+    unsigned long int Populacao1, Populacao2;
     float Area1, Area2, PIB1, PIB2, PIBPerCapt1, PIBPerCapt2, DensiPop1, DensiPop2;
+    double SuperPoder1, SuperPoder2;
     char Estado1, Estado2;
     char CodCarta1[3], CodCarta2[3], Cidade1[20], Cidade2[20];
 
@@ -65,7 +67,18 @@ int main() {
     DensiPop1 = (float) Populacao1 / Area1;
     DensiPop2 = (float) Populacao2 / Area2;
 
-    //Retorna valores da carta
+    //Comparacao
+    CompPop = Populacao1 > Populacao2;
+    CompPIB = PIB1 > PIB2;
+    CompArea = Area1 > Area2;
+    CompTur = PontoTur1 > PontoTur2;
+    CompPercap = PIBPerCapt1 > PIBPerCapt2;
+    CompDensi = DensiPop1 < DensiPop2;
+    SuperPoder1 = (long double) (Populacao1 + PIB1 + Area1 + PontoTur1 + PIBPerCapt1 + (1 / DensiPop1));
+    SuperPoder2 =  (long double) (Populacao2 + PIB2 + Area2 + PontoTur2 + PIBPerCapt2 + (1 / DensiPop2));
+    SuperPoderF = SuperPoder1 > SuperPoder2;
+    
+    //Retorna valores da carta 1
     printf("\n--Carta 1: \n");
     printf("Nome: %s \n", Cidade1);
     printf("Estado: %c\n", Estado1);
@@ -77,7 +90,7 @@ int main() {
     printf("PIB per capita: %.2f reias \n", PIBPerCapt1);
     printf("Desidade populacional %.2f hab/km² \n", DensiPop1);
 
-    //Retorna valores da carta
+    //Retorna valores da carta 2
     printf("\n-- Carta 2: \n");
     printf("Nome: %s \n", Cidade2);
     printf("Estado: %c\n", Estado2);
@@ -87,7 +100,17 @@ int main() {
     printf("Área: %.2f Km² \n", Area2);
     printf("Pontos turisticos: %d \n", PontoTur2);
     printf("PIB per capita: %.2f reias \n", PIBPerCapt2);
-    printf("Desidade populacional %.2f hab/km² \n", DensiPop2);
+    printf("Densidade populacional %.2f hab/km² \n", DensiPop2);
+
+    //Retorna a comparacao das cartas
+    printf("\n-- Comparacao entre as cartas:\n");
+    printf("\nPopulacao: A carta %d venceu (%d) .\n", CompPop ? 1 : 2, CompPop);
+    printf("PIB: A carta %d venceu (%d) .\n", CompPIB ? 1 : 2, CompPIB);
+    printf("Área: A carta %d venceu (%d) .\n", CompArea ? 1 : 2, CompArea);
+    printf("Pontos turisticos: A carta %d venceu (%d) .\n", CompTur ? 1 : 2, CompTur);
+    printf("PIB per capita: A carta %d venceu (%d) .\n", CompPercap ? 1 : 2, CompPercap);
+    printf("Densidade populacional: A carta %d venceu (%d) .\n", CompDensi ? 1 : 2, CompDensi);
+    printf("Super Poder: A carta %d venceu.\n", SuperPoderF ? 1 : 2, SuperPoderF);
 
     return 0;
 }
